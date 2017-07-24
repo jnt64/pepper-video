@@ -1,0 +1,1 @@
+clang++ ./media_stream_video.cc -shared -o ppapi_media_stream_video.so -I/Users/james/Technology/nacl/nacl_sdk/pepper_49/include -L/Users/james/Technology/nacl/nacl_sdk/pepper_49/lib/mac_host/Release -lppapi_cpp -lppapi -lppapi_gles2 -lpthread -Wall -fPIC

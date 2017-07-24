@@ -1,0 +1,1 @@
+clang++ ./sweet_decode.cpp -shared -o ppapi_sweet_decode.so -I/Users/james/Technology/nacl/nacl_sdk/pepper_49/include -L/Users/james/Technology/nacl/nacl_sdk/pepper_49/lib/mac_host/Release -lppapi_cpp -lppapi -lpthread -Wall -fPIC
