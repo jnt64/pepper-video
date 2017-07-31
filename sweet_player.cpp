@@ -437,9 +437,10 @@ void SweetPepperInstance::initFFmpeg ()
     // Register all formats and codecs
     av_register_all();
 
-    const char *videoFilePath = "/Users/james/Synergy/sandbox/media/frag/100.frag";
+    //const char *videoFilePath = "/Users/jamesdoran/Development/synergy/media/frag/26ccb43b-2da0-4ffd-70c7-3bd5adcbd408-asset/26ccb43b-2da0-4ffd-70c7-3bd5adcbd408.1-Video1.2298.frag";
     //const char *videoFilePath = "/Users/james/Synergy/sandbox/media/basketball/150831121.mp4";
     //const char *videoFilePath = "/Users/james/Desktop/Untitled.mov";
+    const char *videoFilePath = "/Users/jamesdoran/Desktop/zero-dollar-cart.mov";
 
     // TEST CUSTOM AVIO
     mIfstream.open(videoFilePath, std::ios::binary);
@@ -520,6 +521,14 @@ void SweetPepperInstance::initFFmpeg ()
     // av_dict_set(&options, "pixel_format", "yuv420p", 0); // Not sure why this works from read file and not avio.
 
     // Retrieve stream information
+    SWEET_ASSERT_THROW(avformat_find_stream_info(mpFormatCtx, NULL/*&options*/) >= 0, "Could not find stream info.");
+
+    // Try setting the options for frag files.
+    AVDictionary *options = NULL; // This is cheating and needs to be fixed. We want to find the pixel format, not set it.
+    av_dict_set(&options, "pixel_format", "yuv420p", 0); // Not sure why this works from read file and not avio.
+    av_dict_set(&options, "video_size", "1280x720", 0); // Not sure why this works from read file and not avio.
+
+    /// Try setting the options for frag files. ^^^
     SWEET_ASSERT_THROW(avformat_find_stream_info(mpFormatCtx, NULL/*&options*/) >= 0, "Could not find stream info.");
 
     std::cout << "HERE6" << std::endl;
