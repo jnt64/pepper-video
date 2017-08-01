@@ -25,7 +25,7 @@ LDLIBS := $(shell pkg-config --libs $(FFMPEG_LIBS)) $(LDLIBS)
 SOURCE=src/cpp/include/sweet_player.cpp
 TARGET := build/lib/$(PLATFORM)/ppapi_sweet.so
 
-.phony: all clean ppapi_sweet.so push
+.phony: all clean ppapi_sweet push
 
 ppapi_sweet:
 	$(CXX) $(SOURCE) -shared -o $(TARGET) $(CFLAGS) $(LDLIBS)
