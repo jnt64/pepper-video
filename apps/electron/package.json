@@ -1,0 +1,23 @@
+{
+  "name": "Quantum",
+  "version": "0.0.0",
+  "description": "Quantum Video Player",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/jdoran13/quantum",
+  "keywords": [
+    "video",
+    "player",
+    "quantum"
+  ],
+  "author": "James Doran",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "~1.6.2"
+  },
+  "asar": true,
+  "app-version": "0.0.0",
+  "app-bundle-id": "com.doran.james.Quantum"
+}
